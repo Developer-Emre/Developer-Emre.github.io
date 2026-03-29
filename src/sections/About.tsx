@@ -54,15 +54,15 @@ const About = () => {
           initial={initial}
           animate="visible"
         >
-          <motion.h1 id="about-heading" className="text-[clamp(2.4rem,6vw,4.5rem)] font-extrabold leading-[1.1] tracking-[-0.02em] text-foreground" variants={variants.slideLeft}>
+          <motion.h1 id="about-heading" className="text-[clamp(2rem,5vw,3.5rem)] font-extrabold leading-[1.1] tracking-[-0.02em] text-foreground" variants={variants.slideLeft}>
             Hi, I'm <span>{PERSONAL.name}</span>
           </motion.h1>
 
-          <motion.p className="text-[clamp(1.3rem,2.8vw,1.75rem)] font-normal text-muted-foreground m-0" variants={variants.slideLeft}>
+          <motion.p className="text-[clamp(1rem,1.8vw,1.25rem)] font-normal text-muted-foreground m-0" variants={variants.slideLeft}>
             {PERSONAL.role}
           </motion.p>
 
-          <motion.p className="max-w-[56ch] text-lg leading-[1.75] text-muted-foreground m-0" variants={variants.slideLeft}>
+          <motion.p className="max-w-[56ch] text-[1.0625rem] leading-[1.75] text-muted-foreground m-0" variants={variants.slideLeft}>
             {ABOUT_DESCRIPTION}
           </motion.p>
 

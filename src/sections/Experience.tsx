@@ -49,11 +49,11 @@ const Experience = () => {
             {EXPERIENCE_INTRO.label}
           </motion.span>
 
-          <motion.h3 className="text-[clamp(2.2rem,4vw,3.2rem)] font-extrabold leading-[1.15] tracking-[-0.02em] text-foreground m-0" variants={fadeUpVariant}>
+          <motion.h3 className="text-[clamp(1.75rem,3.5vw,2.5rem)] font-extrabold leading-[1.15] tracking-[-0.02em] text-foreground m-0" variants={fadeUpVariant}>
             {EXPERIENCE_INTRO.heading}
           </motion.h3>
 
-          <motion.p className="text-lg leading-[1.8] text-muted-foreground max-w-[48ch] m-0" variants={fadeUpVariant}>
+          <motion.p className="text-[1.0625rem] leading-[1.8] text-muted-foreground max-w-[48ch] m-0" variants={fadeUpVariant}>
             {EXPERIENCE_INTRO.description}
           </motion.p>
 
@@ -93,7 +93,7 @@ const Experience = () => {
 
                 <div className="flex flex-col gap-2">
                   <span className="text-xs font-bold tracking-[0.08em] uppercase text-(--accent-exp-subtle)">{exp.period}</span>
-                  <h3 className="text-xl font-bold text-foreground m-0">
+                  <h3 className="text-[1.125rem] font-bold text-foreground m-0">
                     {exp.role}
                     <span className="font-medium text-muted-foreground"> @ {exp.company}</span>
                   </h3>

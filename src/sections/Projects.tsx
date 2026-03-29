@@ -116,10 +116,10 @@ const Projects = () => {
 
             {/* Başlık + açıklama */}
             <div className="flex flex-col gap-2 flex-1">
-              <h3 className="text-lg font-bold text-foreground m-0 leading-snug">
+              <h3 className="text-[1rem] font-bold text-foreground m-0 leading-snug">
                 {project.title}
               </h3>
-              <p className="text-base leading-[1.75] text-muted-foreground m-0">
+              <p className="text-[0.9375rem] leading-[1.75] text-muted-foreground m-0">
                 {project.description}
               </p>
             </div>
