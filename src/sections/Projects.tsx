@@ -1,5 +1,6 @@
 import { motion, useReducedMotion } from 'framer-motion';
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import { FaGithub } from 'react-icons/fa';
+import { FaArrowUpRightFromSquare } from 'react-icons/fa6';
 import { PROJECTS_INTRO, PROJECTS } from '../data/portfolio';
 import type { ProjectStatus } from '../data/portfolio';
 import { VIEWPORT, staggerVariant, cardVariant } from '../lib/animation';
@@ -43,29 +44,57 @@ const Projects = () => {
           >
             {/* ── Görsel alanı ── */}
             <div className="relative w-full aspect-video overflow-hidden bg-muted/50">
-              {project.image ? (
-                <img
-                  src={project.image}
-                  alt={`${project.title} screenshot`}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  loading="lazy"
-                />
-              ) : (
-                /* Görsel yokken placeholder grid deseni */
-                <div
-                  className="w-full h-full flex items-center justify-center"
-                  aria-hidden="true"
+              {project.live ? (
+                <a
+                  href={project.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${project.title} live demo`}
+                  className="block w-full h-full"
+                  tabIndex={0}
                 >
-                  <div
-                    className="absolute inset-0 opacity-20"
-                    style={{
-                      backgroundImage:
-                        'repeating-linear-gradient(to right, currentColor 0 1px, transparent 1px 32px), repeating-linear-gradient(to bottom, currentColor 0 1px, transparent 1px 32px)',
-                    }}
-                  />
-                  <span className="relative text-xs font-bold tracking-[0.14em] uppercase text-muted-foreground/50">
-                    Preview
-                  </span>
+                  {project.image ? (
+                    <img
+                      src={project.image}
+                      alt={`${project.title} screenshot`}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center" aria-hidden="true">
+                      <div
+                        className="absolute inset-0 opacity-20"
+                        style={{ backgroundImage: 'repeating-linear-gradient(to right, currentColor 0 1px, transparent 1px 32px), repeating-linear-gradient(to bottom, currentColor 0 1px, transparent 1px 32px)' }}
+                      />
+                      <span className="relative text-xs font-bold tracking-[0.14em] uppercase text-muted-foreground/50">Preview</span>
+                    </div>
+                  )}
+                  {/* Hover overlay */}
+                  <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/10 transition-colors duration-300 flex items-center justify-center">
+                    <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center gap-2 text-xs font-semibold text-background bg-foreground/80 backdrop-blur-sm px-3 py-1.5 rounded-full">
+                      <FaArrowUpRightFromSquare aria-hidden="true" />
+                      Visit Site
+                    </span>
+                  </div>
+                </a>
+              ) : (
+                <div className="w-full h-full">
+                  {project.image ? (
+                    <img
+                      src={project.image}
+                      alt={`${project.title} screenshot`}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center" aria-hidden="true">
+                      <div
+                        className="absolute inset-0 opacity-20"
+                        style={{ backgroundImage: 'repeating-linear-gradient(to right, currentColor 0 1px, transparent 1px 32px), repeating-linear-gradient(to bottom, currentColor 0 1px, transparent 1px 32px)' }}
+                      />
+                      <span className="relative text-xs font-bold tracking-[0.14em] uppercase text-muted-foreground/50">Preview</span>
+                    </div>
+                  )}
                 </div>
               )}
             </div>
@@ -98,17 +127,6 @@ const Projects = () => {
                     aria-label={`${project.title} GitHub repository`}
                   >
                     <FaGithub className="text-lg" aria-hidden="true" />
-                  </a>
-                )}
-                {project.live && (
-                  <a
-                    href={project.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-colors duration-200"
-                    aria-label={`${project.title} live demo`}
-                  >
-                    <FaExternalLinkAlt className="text-sm" aria-hidden="true" />
                   </a>
                 )}
               </div>

@@ -182,6 +182,7 @@ export const PROJECTS: Project[] = [
     status:      'production',
     image:       '/image/flowtask.webp',
     github:      'https://github.com/Developer-Emre/taskflow',
+    live:'https://taskflow-lilac-six.vercel.app/'
   },
   // {
   //   id:          3,
