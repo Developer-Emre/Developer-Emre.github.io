@@ -1,0 +1,287 @@
+@import "tailwindcss";
+
+/* ── Smooth scroll ──────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ── Skip link (klavye erişilebilirliği) ────────────────────── */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 1rem;
+  z-index: 9999;
+  padding: 0.5rem 1.25rem;
+  background: var(--btn-primary-bg);
+  color: var(--btn-primary-fg);
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.skip-link:focus-visible {
+  left: 1rem;
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+/* ── Focus visible (klavye navigasyonu) ─────────────────────── */
+:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+  border-radius: 0.25rem;
+}
+
+/* ── Design tokens → Tailwind utilities ─────────────────────── */
+@theme {
+  --color-background:             hsl(var(--background));
+  --color-foreground:             hsl(var(--foreground));
+  --color-card:                   hsl(var(--card));
+  --color-card-foreground:        hsl(var(--card-foreground));
+  --color-popover:                hsl(var(--popover));
+  --color-popover-foreground:     hsl(var(--popover-foreground));
+  --color-primary:                hsl(var(--primary));
+  --color-primary-foreground:     hsl(var(--primary-foreground));
+  --color-secondary:              hsl(var(--secondary));
+  --color-secondary-foreground:   hsl(var(--secondary-foreground));
+  --color-muted:                  hsl(var(--muted));
+  --color-muted-foreground:       hsl(var(--muted-foreground));
+  --color-accent:                 hsl(var(--accent));
+  --color-accent-foreground:      hsl(var(--accent-foreground));
+  --color-destructive:            hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-border:                 hsl(var(--border));
+  --color-input:                  hsl(var(--input));
+  --color-ring:                   hsl(var(--ring));
+  --radius-DEFAULT:               var(--radius);
+}
+
+/* ── HSL tokens ──────────────────────────────────────────────── */
+@layer base {
+  :root {
+    --background: 0 0% 100%;       --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;             --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;          --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;            --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;       --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;           --muted-foreground: 0 0% 40%;  
+    --accent: 0 0% 96.1%;          --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;  --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;          --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;             --radius: 0.5rem;
+
+    --scene-bg:       #ffffff;
+    --scene-grid:     rgb(0 0 0 / 0.12);
+    --scene-vignette: #ffffff;
+
+    --btn-primary-bg:       #0f172a;
+    --btn-primary-bg-hover: #1e293b;
+    --btn-primary-fg:       #ffffff;
+    --btn-primary-shadow:   rgb(15 23 42 / 0.35);
+
+    --btn-github-hover-bg:  #24292f;
+    --btn-github-hover-fg:  #ffffff;
+    --btn-github-shadow:    rgb(36 41 47 / 0.35);
+
+    --btn-linkedin-shadow:  rgb(10 102 194 / 0.35);
+
+    --btn-hover-shadow:     rgb(0 0 0 / 0.12);
+
+    --accent-exp:            hsl(var(--foreground));
+    --accent-exp-subtle:     hsl(var(--muted-foreground));
+    --accent-exp-dot:        hsl(var(--foreground));
+    --accent-exp-dot-glow:   rgb(0 0 0 / 0.15);
+
+    --status-production:     #059669;   /* emerald-600 */
+    --status-development:    #d97706;   /* amber-600   */
+    --form-error:            #dc2626;   /* red-600     */
+  }
+
+  .dark {
+    --background: 0 0% 3.9%;       --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;             --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;          --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;           --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;       --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;           --muted-foreground: 0 0% 72%;  
+    --accent: 0 0% 14.9%;          --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;  --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;          --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+
+    --scene-bg:       #000000;
+    --scene-grid:     rgb(255 255 255 / 0.50);
+    --scene-vignette: #000000;
+
+    --btn-primary-bg:       #f1f5f9;
+    --btn-primary-bg-hover: #e2e8f0;
+    --btn-primary-fg:       #0f172a;
+    --btn-primary-shadow:   rgb(241 245 249 / 0.20);
+
+    --btn-github-hover-bg:  #e6edf3;
+    --btn-github-hover-fg:  #24292f;
+    --btn-github-shadow:    rgb(230 237 243 / 0.20);
+
+    --btn-linkedin-shadow:  rgb(10 102 194 / 0.25);
+
+    --btn-hover-shadow:     rgb(255 255 255 / 0.08);
+
+    --accent-exp:            hsl(var(--foreground));
+    --accent-exp-subtle:     hsl(var(--muted-foreground));
+    --accent-exp-dot:        hsl(var(--foreground));
+    --accent-exp-dot-glow:   rgb(255 255 255 / 0.15);
+
+    --status-production:     #34d399;   /* emerald-400 */
+    --status-development:    #fbbf24;   /* amber-400   */
+    --form-error:            #f87171;   /* red-400     */
+  }
+}
+
+/* ── Global base ────────────────────────────────────────────── */
+@layer base {
+  * { @apply border-border; }
+
+  body {
+    min-height: 100vh;
+    @apply bg-background text-foreground;
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue",
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* ── Background Scene ───────────────────────────────────────── */
+/*  base     → tema rengi zemin (light: beyaz, dark: siyah)
+    ::before → 3D perspektifli grid
+    ::after  → sol/sağ kenar maskesi              */
+
+.background-scene,
+.background-scene::before,
+.background-scene::after {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+.background-scene {
+  z-index: -2;
+  background: var(--scene-bg);
+  transition: background 0.3s ease;
+}
+
+.background-scene::before {
+  content: '';
+  z-index: -1;
+  transform: rotateX(30deg) rotateY(-5deg) rotateZ(20deg) scale(2);
+  transform-origin: center;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  background-image:
+    repeating-linear-gradient(to right,  var(--scene-grid) 0 1px, transparent 1px 40px),
+    repeating-linear-gradient(to bottom, var(--scene-grid) 0 1px, transparent 1px 40px);
+}
+
+.background-scene::after {
+  content: '';
+  z-index: 0;
+  background:
+    linear-gradient(to right, var(--scene-vignette) 6%, transparent 60%),
+    linear-gradient(to left,  var(--scene-vignette) 6%, transparent 60%);
+}
+
+/* ── Hero Section ───────────────────────────────────────────── */
+@layer components {
+
+  .hero-status-dot {
+    width: 0.55rem;
+    height: 0.55rem;
+    border-radius: 9999px;
+    background: #22c55e;
+    box-shadow: 0 0 6px 2px rgb(34 197 94 / 0.5);
+    animation: hero-pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes hero-pulse {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.5; }
+  }
+
+  /* ── CTA Butonları ── */
+  .hero-btn-outline,
+  .hero-btn-ghost,
+  .hero-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.65rem 1.4rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease,
+                box-shadow 0.3s ease, transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .hero-btn-outline,
+  .hero-btn-ghost,
+  .hero-btn-primary {
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px var(--btn-hover-shadow);
+    }
+    &:active {
+      transform: translateY(0);
+      box-shadow: none;
+    }
+  }
+
+  .hero-btn-linkedin {
+    &:hover {
+      background: #0A66C2;
+      color: #ffffff;
+      border-color: #0A66C2;
+      box-shadow: 0 6px 20px var(--btn-linkedin-shadow);
+    }
+  }
+
+  .hero-btn-github {
+    &:hover {
+      background: var(--btn-github-hover-bg);
+      color: var(--btn-github-hover-fg);
+      border-color: var(--btn-github-hover-bg);
+      box-shadow: 0 6px 20px var(--btn-github-shadow);
+    }
+  }
+
+  .hero-btn-outline {
+    background: hsl(var(--background));
+    color: hsl(var(--foreground));
+    border: 1px solid hsl(var(--border));
+  }
+
+  .hero-btn-ghost {
+    background: transparent;
+    color: hsl(var(--foreground));
+    border: none;
+  }
+
+  .hero-btn-primary {
+    background: var(--btn-primary-bg);
+    color: var(--btn-primary-fg);
+    border: 1px solid transparent;
+    &:hover {
+      background: var(--btn-primary-bg-hover);
+      box-shadow: 0 6px 20px var(--btn-primary-shadow);
+    }
+  }
+
+}
+
