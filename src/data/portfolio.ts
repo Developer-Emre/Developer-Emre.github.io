@@ -184,16 +184,16 @@ export const PROJECTS: Project[] = [
     github:      'https://github.com/Developer-Emre/taskflow',
     live:'https://taskflow-lilac-six.vercel.app/'
   },
-  // {
-  //   id:          3,
-  //   title:       'Project Title Three',
-  //   description: 'An open-source CLI tool that automates repetitive development workflows. Used by 500+ developers across various teams.',
-  //   tags:        ['TypeScript', 'Node.js', 'Git'],
-  //   status:      'development',
-  //   image:       '/image/project-three.png',
-  //   github:      'https://github.com/username/repo-three',
-  //   live:        'https://example.com',
-  // },
+  {
+    id:          3,
+    title:       'Weather App',
+    description: 'Real-time weather forecasts for any city worldwide. 7-day outlook, wind, humidity, and more — built with Next.js 16 and TypeScript.',
+    tags:        ['Next.js', 'TypeScript', 'Tailwind CSS', 'REST API'],
+    status:      'production',
+    image:       '/image/weather-app.webp',
+    github:      'https://github.com/Developer-Emre/Weather_App',
+    live:        'https://weather-app-theta-ten-38.vercel.app/',
+  },
 ];
 
 // ─── Navbar linkleri ─────────────────────────────────────────────────────────
