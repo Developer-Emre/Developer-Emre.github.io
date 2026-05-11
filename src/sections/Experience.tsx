@@ -49,16 +49,16 @@ const Experience = () => {
             {EXPERIENCE_INTRO.label}
           </motion.span>
 
-          <motion.h3 className="text-[clamp(1.75rem,3.5vw,2.5rem)] font-extrabold leading-[1.15] tracking-[-0.02em] text-foreground m-0" variants={fadeUpVariant}>
+          <motion.h3 className="text-h3 font-extrabold leading-[1.15] tracking-[-0.02em] text-foreground m-0" variants={fadeUpVariant}>
             {EXPERIENCE_INTRO.heading}
           </motion.h3>
 
-          <motion.p className="text-[1.0625rem] leading-[1.8] text-muted-foreground max-w-[48ch] m-0" variants={fadeUpVariant}>
+          <motion.p className="text-body-md leading-[1.75] text-muted-foreground max-w-[48ch] m-0" variants={fadeUpVariant}>
             {EXPERIENCE_INTRO.description}
           </motion.p>
 
           {/* Highlight listesi */}
-          <motion.ul className="list-none p-0 mt-2 flex flex-col gap-[0.9rem]" variants={staggerVariant}>
+          <motion.ul className="list-none p-0 mt-2 flex flex-col gap-3.5" variants={staggerVariant}>
             {EXPERIENCE_HIGHLIGHTS.map((item) => (
               <motion.li key={item} className="flex items-center gap-3 text-base font-semibold text-foreground" variants={variants.highlight}>
                 <FaCheckCircle className="text-(--accent-exp) shrink-0 text-xl" aria-hidden="true" />
@@ -93,14 +93,14 @@ const Experience = () => {
 
                 <div className="flex flex-col gap-2">
                   <span className="text-xs font-bold tracking-[0.08em] uppercase text-(--accent-exp-subtle)">{exp.period}</span>
-                  <h3 className="text-[1.125rem] font-bold text-foreground m-0">
+                  <h3 className="text-lg font-bold text-foreground m-0">
                     {exp.role}
                     <span className="font-medium text-muted-foreground"> @ {exp.company}</span>
                   </h3>
                   <p className="text-base leading-[1.75] text-muted-foreground mt-1 mb-0">{exp.description}</p>
 
                   {/* Tech tags */}
-                  <div className="flex flex-wrap gap-[0.4rem] mt-[0.6rem]">
+                  <div className="flex flex-wrap gap-1.5 mt-2">
                     {exp.tech.map((t) => (
                       <span key={t} className="text-xs font-medium px-3 py-1 rounded-full bg-muted text-foreground border border-border">{t}</span>
                     ))}

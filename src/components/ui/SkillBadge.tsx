@@ -32,8 +32,8 @@ const SkillBadge = ({ name, icon, color }: Props) => {
   const IconComp = ICON_MAP[icon];
 
   return (
-    <span className="inline-flex items-center gap-[0.35rem] px-3 py-[0.25rem] rounded-full border border-border bg-muted text-foreground text-xs font-medium">
-      {IconComp && <IconComp style={{ color }} aria-hidden="true" />}
+    <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-border bg-muted text-foreground text-sm font-medium">
+      {IconComp && <IconComp className="text-base shrink-0" style={{ color }} aria-hidden="true" />}
       {name}
     </span>
   );

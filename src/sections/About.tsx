@@ -1,7 +1,7 @@
 import { FaLinkedin, FaGithub, FaDownload } from 'react-icons/fa';
 import { motion, useReducedMotion } from 'framer-motion';
 import type { Variants } from 'framer-motion';
-import { PERSONAL, ABOUT_SKILLS, ABOUT_DESCRIPTION, RESUME_URL, ABOUT_PHOTO, avatarFallbackUrl } from '../data/portfolio';
+import { PERSONAL, ABOUT_SKILLS, ABOUT_DESCRIPTION, RESUME_URL } from '../data/portfolio';
 import SkillBadge from '../components/ui/SkillBadge';
 import { EASE_SMOOTH } from '../lib/animation';
 import { trackEvent, GA_EVENTS } from '../lib/analytics';
@@ -46,16 +46,16 @@ const About = () => {
       aria-labelledby="about-heading"
       className="relative min-h-screen flex items-center justify-center px-6 pt-24 md:pt-0"
     >
-      <div className="max-w-6xl w-full mx-auto flex flex-col-reverse md:flex-row items-center gap-12 md:gap-20">
+      <div className="max-w-5xl w-full mx-auto flex flex-col items-center gap-12">
 
-        {/* ── Sol: Metin içeriği ── */}
+        {/* ── İçerik ── */}
         <motion.div
-          className="flex-1 flex flex-col items-center md:items-start text-center md:text-left gap-6"
+          className="w-full flex flex-col items-start text-left gap-6"
           variants={variants.content}
           initial={initial}
           animate="visible"
         >
-          <motion.h1 id="about-heading" className="text-[clamp(2rem,5vw,3.5rem)] font-extrabold leading-[1.1] tracking-[-0.02em] text-foreground" variants={variants.slideLeft}>
+          <motion.h1 id="about-heading" className="text-h1 font-extrabold leading-[1.1] tracking-[-0.02em] text-foreground" variants={variants.slideLeft}>
             Hi, I'm <span>{PERSONAL.name}</span>
           </motion.h1>
 
@@ -63,13 +63,13 @@ const About = () => {
             {PERSONAL.role}
           </motion.p>
 
-          <motion.p className="max-w-[56ch] text-[1.0625rem] leading-[1.75] text-muted-foreground m-0" variants={variants.slideLeft}>
+          <motion.p className="max-w-[64ch] text-body-md leading-[1.75] text-muted-foreground m-0" variants={variants.slideLeft}>
             {ABOUT_DESCRIPTION}
           </motion.p>
 
           {/* Skill badge'leri */}
           <motion.div
-            className="flex flex-wrap justify-center md:justify-start gap-2"
+            className="flex flex-wrap justify-start gap-2"
             variants={variants.stagger}
           >
             {ABOUT_SKILLS.map((skill) => (
@@ -81,7 +81,7 @@ const About = () => {
 
           {/* CTA butonları */}
           <motion.div
-            className="flex flex-wrap justify-center md:justify-start gap-3 mt-2"
+            className="flex flex-wrap justify-start gap-3 mt-2"
             variants={variants.stagger}
           >
             <motion.a
@@ -117,29 +117,6 @@ const About = () => {
               <FaDownload aria-hidden="true" />
             </motion.a>
           </motion.div>
-        </motion.div>
-
-        {/* ── Sağ: Fotoğraf (sadece desktop) ── */}
-        <motion.div
-          className="shrink-0 hidden md:block"
-          variants={variants.slideRight}
-          initial={initial}
-          animate="visible"
-        >
-          <div className="w-[clamp(260px,32vw,400px)]">
-            <img
-              src={ABOUT_PHOTO}
-              alt={PERSONAL.name}
-              className="w-full h-auto block rounded-2xl"
-              fetchPriority="high"
-              loading="eager"
-              decoding="async"
-              onError={(e) => {
-                (e.currentTarget as HTMLImageElement).src =
-                  avatarFallbackUrl(320);
-              }}
-            />
-          </div>
         </motion.div>
 
       </div>

@@ -134,16 +134,16 @@ const Projects = () => {
 
             {/* Başlık + açıklama */}
             <div className="flex flex-col gap-2 flex-1">
-              <h3 className="text-[1rem] font-bold text-foreground m-0 leading-snug">
+              <h3 className="text-base font-bold text-foreground m-0 leading-snug">
                 {project.title}
               </h3>
-              <p className="text-[0.9375rem] leading-[1.75] text-muted-foreground m-0">
+              <p className="text-body-sm leading-[1.75] text-muted-foreground m-0">
                 {project.description}
               </p>
             </div>
 
             {/* Tech tags */}
-            <div className="flex flex-wrap gap-[0.35rem] mt-auto pt-3 border-t border-muted-foreground/30">
+            <div className="flex flex-wrap gap-1.5 mt-auto pt-3 border-t border-muted-foreground/30">
               {project.tags.map((tag) => (
                 <span
                   key={tag}

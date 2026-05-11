@@ -58,7 +58,7 @@ const Hero = () => {
           initial={initial}
           animate="visible"
         >
-          <motion.h1 id="about-heading" className="text-[clamp(2.4rem,6vw,4.5rem)] font-extrabold leading-[1.1] tracking-[-0.02em] text-foreground" variants={variants.slideLeft}>
+          <motion.h1 id="about-heading" className="text-h1 font-extrabold leading-[1.1] tracking-[-0.02em] text-foreground" variants={variants.slideLeft}>
             Hi, I'm <span>{PERSONAL.name}</span>
           </motion.h1>
 
@@ -66,7 +66,7 @@ const Hero = () => {
             {PERSONAL.role}
           </motion.p>
 
-          <motion.p className="max-w-[56ch] text-[1.2rem] leading-[1.75] text-muted-foreground m-0" variants={variants.slideLeft}>
+          <motion.p className="max-w-[56ch] text-lg leading-[1.75] text-muted-foreground m-0" variants={variants.slideLeft}>
             {ABOUT_DESCRIPTION}
           </motion.p>
 

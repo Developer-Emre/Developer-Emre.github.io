@@ -57,7 +57,7 @@ const Skills = () => {
                     <IconComp aria-hidden="true" />
                   </span>
                 )}
-                <h3 className="text-[0.9375rem] font-bold text-foreground m-0">
+                <h3 className="text-body-sm font-bold text-foreground m-0">
                   {category.label}
                 </h3>
               </div>

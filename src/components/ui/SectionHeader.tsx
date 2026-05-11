@@ -26,14 +26,14 @@ const SectionHeader = ({ id, label, heading, subtext, initial }: Props) => (
 
     <motion.h2
       id={id}
-      className="text-[clamp(1.875rem,4vw,2.75rem)] font-extrabold leading-[1.15] tracking-[-0.025em] text-foreground m-0"
+      className="text-h2 font-extrabold leading-[1.15] tracking-[-0.02em] text-foreground m-0"
       variants={fadeUpVariant}
     >
       {heading}
     </motion.h2>
 
     <motion.p
-      className="text-[0.9375rem] leading-[1.75] text-muted-foreground max-w-[52ch] m-0"
+      className="text-body-sm leading-[1.75] text-muted-foreground max-w-[52ch] m-0"
       variants={fadeUpVariant}
     >
       {subtext}
