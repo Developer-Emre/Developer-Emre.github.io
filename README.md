@@ -1,73 +1,92 @@
-# React + TypeScript + Vite
+# Developer Emre Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A personal portfolio website. This React, TypeScript, and Vite-based project presents experience, projects, skills, and contact sections in a modern single-page layout.
 
-Currently, two official plugins are available:
+Live site: https://developer-emre.github.io
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## React Compiler
+- Type-safe interface development with React 19 + TypeScript
+- Fast development workflow and optimized build process with Vite
+- Component-based architecture (sections, layout, components)
+- Smooth transitions and animations with Framer Motion
+- Theme management with ThemeContext
+- Contact form integration with EmailJS
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Technology Stack
 
-## Expanding the ESLint configuration
+- React
+- TypeScript
+- Vite
+- Framer Motion
+- React Icons
+- Tailwind CSS
+- ESLint
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Getting Started
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Requirements
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- Node.js 18+
+- npm 9+
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Installation
+
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Development
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```
+
+### Production Build
+
+```bash
+npm run build
+```
+
+### Build Preview
+
+```bash
+npm run preview
+```
+
+### Lint
+
+```bash
+npm run lint
+```
+
+## Project Structure
+
+```text
+src/
+  components/  # Reusable UI components
+  context/     # Theme management and related hooks
+  data/        # Portfolio content and static data sources
+  layout/      # Page shell (Navbar, Footer, RootLayout)
+  lib/         # Utility library code (animation, analytics)
+  sections/    # Page sections (Hero, About, Experience, Projects...)
+```
+
+## Scripts
+
+- npm run dev: Starts the Vite development server.
+- npm run build: Runs TypeScript compilation, then creates a production build.
+- npm run preview: Serves the build output locally in preview mode.
+- npm run lint: Runs ESLint for code quality checks.
+
+## Content Updates
+
+Portfolio texts, projects, and profile information are managed from this file:
+
+- src/data/portfolio.ts
+
+## Contact
+
+- GitHub: https://github.com/developer-emre
+- LinkedIn: https://linkedin.com/in/emresarigul
+- Email: emre-sarigul@outlook.com

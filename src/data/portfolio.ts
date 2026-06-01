@@ -194,6 +194,14 @@ export const PROJECTS: Project[] = [
     github:      'https://github.com/Developer-Emre/Weather_App',
     live:        'https://weather-app-theta-ten-38.vercel.app/',
   },
+  {
+    id:          4,
+    title:       'Boltchats',
+    description: 'Real-time chat platform built with a modern microservices architecture. Powered by FastAPI, Redis, and WebSockets for seamless communication. Features include user authentication, private messaging, and group chats. Deployed on AWS with Docker for scalability and reliability.',
+    tags:        ['Next.js', 'TypeScript', 'FastAPI', 'WebSockets', 'Redis', 'AWS', 'Docker', 'Kubernetes','Prometheus', 'Grafana', 'CI/CD', 'Microservices'],
+    status:      'development',
+    github:      'https://github.com/Developer-Emre/boltchats',
+  },
 ];
 
 // ─── Navbar linkleri ─────────────────────────────────────────────────────────
