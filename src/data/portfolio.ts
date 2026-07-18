@@ -11,9 +11,9 @@ export const PERSONAL = {
 
 // ─── About ───────────────────────────────────────────────────────────────────
 export const ABOUT_DESCRIPTION =
-  'Full-stack architect building AI-powered SaaS products. Currently shipping an AI-driven ATS checker that intelligently analyzes and ranks job applications.' + 
-  ' 4 years designing scalable systems: architected REST APIs handling thousands of requests, optimized PostgreSQL databases, implemented monitoring infrastructure, and deployed systems achieving 99.8% uptime. I think in systems microservices, API security, database optimization, infrastructure reliability.' + 
-  ' Building products that users trust and admins scale confidently.'
+  'Full-stack architect building production-ready real-time systems. Currently shipping BoltChats, a Discord-like messaging platform with sub-100ms latency, powering 10,000+ concurrent WebSocket connections.' + 
+  ' 4 years architecting microservices: designed 3-service FastAPI architecture (REST API, WebSocket, async workers), optimized MongoDB with cursor-based pagination, built observability stack (Prometheus/Grafana/Loki), deployed on Kubernetes achieving 5,000+ msg/sec throughput. I think in distributed systems, write-behind patterns, message persistence, infrastructure reliability.' + 
+  ' Building platforms that users experience instantly and systems that admins scale effortlessly.'
 
 export const RESUME_URL = '/resume/emre-sarigul@outlook.com.pdf';
 
@@ -219,19 +219,21 @@ export const EXPERIENCE_INTRO = {
   sectionHeading: 'Work History & Career',
   sectionSubtext: 'A timeline of my professional journey, the companies I have worked with, and the impact I have made along the way.',
   label:       'BACKGROUND',
-  heading:     'Building intelligent SaaS products \nwith microservices architecture.',
+  heading:     'Architecting real-time platforms \nwith enterprise-grade infrastructure.',
   description:
-    'Started in operations at BtcTurk, I served 10,000+ active users. ' +
-    'Realized I wanted to build systems rather than maintain them. ' +
-    'Now architecting distributed systems, scalable APIs, and intelligent data pipelines. '
+    'Started in operations at BtcTurk, scaling operations for 10,000+ users. ' +
+    'Transitioned to building systems — now designing production microservices on Kubernetes with full observability stacks. ' +
+    'Focus: real-time architectures, message persistence patterns, infrastructure reliability, and zero-downtime deployments. '
   } as const;
 
 export const EXPERIENCE_HIGHLIGHTS = [
-  'Microservices architecture with FastAPI',
-  'Web scraping pipelines using Playwright',
-  '15+ production REST APIs handling thousands of daily requests',
-  'AI-powered ATS checker platform in production',
-  '99.8% uptime infrastructure and monitoring systems'
+  '3-service microservices architecture (REST API, WebSocket, async storage worker)',
+  'Redis Pub/Sub + Queue dual-pattern for real-time broadcasting and message persistence',
+  '5,000+ messages/sec throughput with sub-100ms latency',
+  '10,000+ concurrent WebSocket connections on Kubernetes (EKS)',
+  'Full observability stack: Prometheus, Grafana, Loki, Tempo with distributed tracing',
+  'Infrastructure as Code: Terraform (VPC, EKS, RDS Redis), Kustomize overlays (dev/staging/prod)',
+  'CI/CD automation: GitHub Actions, Docker, ECR, automatic deployments'
 ] as const;
 
 export interface Experience {
