@@ -15,7 +15,7 @@ export const ABOUT_DESCRIPTION =
   ' 4 years architecting microservices: designed 3-service FastAPI architecture (REST API, WebSocket, async workers), optimized MongoDB with cursor-based pagination, built observability stack (Prometheus/Grafana/Loki), deployed on Kubernetes with auto-scaling infrastructure. I think in distributed systems, write-behind patterns, message persistence, infrastructure reliability.' + 
   ' Building platforms that users experience instantly and systems that admins scale effortlessly.'
 
-export const RESUME_URL = '/resume/emre-sarigul@outlook.com.pdf';
+export const RESUME_URL = 'https://drive.google.com/uc?export=download&id=1r1TcWz-qtfed3lD9nAlZwsiKab4IV84g';
 
 export const ABOUT_PHOTO = '/image/emre-sarigul.webp';
 
