@@ -5,6 +5,7 @@ import { SKILLS_INTRO, SKILL_CATEGORIES } from '../data/portfolio';
 import SkillBadge from '../components/ui/SkillBadge';
 import { VIEWPORT, staggerVariant, cardVariant } from '../lib/animation';
 import SectionHeader from '../components/ui/SectionHeader';
+import { analytics } from '../lib/analytics';
 
 // ── Category icon map (ICON_MAP pattern — Navbar ile tutarlı) ─────────────────
 const CATEGORY_ICON_MAP: Record<string, IconType> = {
@@ -73,6 +74,7 @@ const Skills = () => {
                     name={skill.name}
                     icon={skill.icon}
                     color={skill.color}
+                    onClick={() => analytics.skillView(skill.name, category.label)}
                   />
                 ))}
               </div>

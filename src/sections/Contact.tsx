@@ -6,6 +6,7 @@ import { FaPaperPlane, FaCheckCircle } from 'react-icons/fa';
 import { CONTACT_INTRO, EMAILJS_CONFIG } from '../data/portfolio';
 import { EASE_SMOOTH, VIEWPORT, fadeUpVariant } from '../lib/animation';
 import SectionHeader from '../components/ui/SectionHeader';
+import { analytics } from '../lib/analytics';
 
 // ── Constants ─────────────────────────────────────────────────────────────────
 const FIELD = {
@@ -100,6 +101,7 @@ const Contact = () => {
         formRef.current!,
         { publicKey: EMAILJS_CONFIG.publicKey },
       );
+      analytics.contactSubmit('email');
       localStorage.setItem(RATE_LIMIT_KEY, String(Date.now()));
       setCooldown(RATE_LIMIT_SECONDS);
       setStatus('success');

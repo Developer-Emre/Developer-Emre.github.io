@@ -5,6 +5,7 @@ import { PROJECTS_INTRO, PROJECTS } from '../data/portfolio';
 import type { ProjectStatus } from '../data/portfolio';
 import { VIEWPORT, staggerVariant, cardVariant } from '../lib/animation';
 import SectionHeader from '../components/ui/SectionHeader';
+import { analytics } from '../lib/analytics';
 
 const STATUS_CONFIG: Record<ProjectStatus, { label: string }> = {
   production:  { label: 'Production'  },
@@ -52,6 +53,7 @@ const Projects = () => {
                   aria-label={`${project.title} live demo`}
                   className="block w-full h-full"
                   tabIndex={0}
+                  onClick={() => analytics.projectLive(project.title)}
                 >
                   {project.image ? (
                     <img
@@ -125,6 +127,7 @@ const Projects = () => {
                     rel="noopener noreferrer"
                     className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-colors duration-200"
                     aria-label={`${project.title} GitHub repository`}
+                    onClick={() => analytics.projectGithub(project.title)}
                   >
                     <FaGithub className="text-lg" aria-hidden="true" />
                   </a>

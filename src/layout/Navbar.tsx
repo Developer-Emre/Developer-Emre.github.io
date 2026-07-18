@@ -4,6 +4,7 @@ import { MdDarkMode, MdLightMode } from 'react-icons/md';
 import type { IconType } from 'react-icons';
 import { NAV_LINKS, PERSONAL, ABOUT_PHOTO, avatarFallbackUrl } from '../data/portfolio';
 import { useTheme } from '../context/useTheme';
+import { analytics } from '../lib/analytics';
 
 // portfolio.ts'teki icon string'lerini bileşene bağlar
 const ICON_MAP: Record<string, IconType> = {
@@ -61,6 +62,7 @@ const Navbar = () => {
                 href={link.href}
                 aria-label={link.label}
                 title={link.label}
+                onClick={() => analytics.navClick(link.label)}
                 className="flex items-center gap-1.5 p-2 rounded-full text-foreground/70 hover:text-foreground hover:bg-white/10 transition-all duration-200"
               >
                 <Icon size={18} aria-hidden="true" />

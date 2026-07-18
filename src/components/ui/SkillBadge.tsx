@@ -26,13 +26,21 @@ const ICON_MAP: Record<string, IconType> = {
   FaAws,         FaImage,       FaDraftingCompass, FaFileExcel, FaFileWord,
 };
 
-type Props = Pick<Skill, 'name' | 'icon' | 'color'>;
+type Props = Pick<Skill, 'name' | 'icon' | 'color'> & {
+  category?: string;
+  onClick?: () => void;
+};
 
-const SkillBadge = ({ name, icon, color }: Props) => {
+const SkillBadge = ({ name, icon, color, onClick }: Props) => {
   const IconComp = ICON_MAP[icon];
 
   return (
-    <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-border bg-muted text-foreground text-sm font-medium">
+    <span 
+      className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-border bg-muted text-foreground text-sm font-medium"
+      onClick={onClick}
+      role={onClick ? "button" : undefined}
+      tabIndex={onClick ? 0 : undefined}
+    >
       {IconComp && <IconComp className="text-base shrink-0" style={{ color }} aria-hidden="true" />}
       {name}
     </span>

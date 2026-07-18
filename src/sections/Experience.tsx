@@ -4,6 +4,7 @@ import { FaCheckCircle } from 'react-icons/fa';
 import { EXPERIENCE_INTRO, EXPERIENCE_HIGHLIGHTS, EXPERIENCES } from '../data/portfolio';
 import { EASE_SMOOTH, VIEWPORT, fadeUpVariant, staggerVariant } from '../lib/animation';
 import SectionHeader from '../components/ui/SectionHeader';
+import { analytics } from '../lib/analytics';
 
 // ── Animation config ──────────────────────────────────────────────────────────
 const variants = {
@@ -81,7 +82,7 @@ const Experience = () => {
             viewport={VIEWPORT}
           >
             {EXPERIENCES.map((exp, index) => (
-              <motion.li key={exp.id} className="relative pl-8" variants={variants.fadeLeft}>
+              <motion.li key={exp.id} className="relative pl-8" variants={variants.fadeLeft} onClick={() => analytics.experienceView(exp.company, exp.role)}>
                 {/* Nokta */}
                 <div
                   className={`absolute left-[-0.3rem] top-[0.45rem] w-[0.7rem] h-[0.7rem] rounded-full border-2 border-background transition-colors ${

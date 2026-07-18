@@ -2,6 +2,7 @@ import { FaLinkedin, FaGithub, FaDownload } from 'react-icons/fa';
 import { motion, useReducedMotion } from 'framer-motion';
 import type { Variants } from 'framer-motion';
 import { PERSONAL, SKILL_CATEGORIES, ABOUT_DESCRIPTION, RESUME_URL, ABOUT_PHOTO } from '../data/portfolio';
+import { analytics } from '../lib/analytics';
 
 const SKILLS = SKILL_CATEGORIES.flatMap(cat => cat.skills);
 import SkillBadge from '../components/ui/SkillBadge';
@@ -93,6 +94,7 @@ const Hero = () => {
               rel="noopener noreferrer"
               className="hero-btn-outline hero-btn-linkedin"
               variants={variants.fadeUp}
+              onClick={() => analytics.linkedinClick()}
             >
               <FaLinkedin aria-hidden="true" />
               LinkedIn
@@ -103,6 +105,7 @@ const Hero = () => {
               rel="noopener noreferrer"
               className="hero-btn-outline hero-btn-github"
               variants={variants.fadeUp}
+              onClick={() => analytics.githubClick()}
             >
               <FaGithub aria-hidden="true" />
               GitHub
@@ -112,6 +115,7 @@ const Hero = () => {
               download
               className="hero-btn-primary"
               variants={variants.fadeUp}
+              onClick={() => analytics.resumeDownload()}
             >
               Download Resume
               <FaDownload aria-hidden="true" />

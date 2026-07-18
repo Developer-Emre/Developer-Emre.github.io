@@ -4,7 +4,7 @@ import type { Variants } from 'framer-motion';
 import { PERSONAL, ABOUT_SKILLS, ABOUT_DESCRIPTION, RESUME_URL } from '../data/portfolio';
 import SkillBadge from '../components/ui/SkillBadge';
 import { EASE_SMOOTH } from '../lib/animation';
-import { trackEvent, GA_EVENTS } from '../lib/analytics';
+import { analytics } from '../lib/analytics';
 
 // ── Animation config ───────────────────────────────────────────────
 
@@ -90,7 +90,7 @@ const About = () => {
               rel="noopener noreferrer"
               className="hero-btn-outline hero-btn-linkedin"
               variants={variants.fadeUp}
-              onClick={() => trackEvent(GA_EVENTS.LINKEDIN_CLICK)}
+              onClick={() => analytics.linkedinClick()}
             >
               <FaLinkedin aria-hidden="true" />
               LinkedIn
@@ -101,7 +101,7 @@ const About = () => {
               rel="noopener noreferrer"
               className="hero-btn-outline hero-btn-github"
               variants={variants.fadeUp}
-              onClick={() => trackEvent(GA_EVENTS.GITHUB_CLICK)}
+              onClick={() => analytics.githubClick()}
             >
               <FaGithub aria-hidden="true" />
               GitHub
@@ -111,7 +111,7 @@ const About = () => {
               download
               className="hero-btn-primary"
               variants={variants.fadeUp}
-              onClick={() => trackEvent(GA_EVENTS.RESUME_DOWNLOAD)}
+              onClick={() => analytics.resumeDownload()}
             >
               Download Resume
               <FaDownload aria-hidden="true" />
