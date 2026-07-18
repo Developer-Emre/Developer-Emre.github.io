@@ -11,8 +11,8 @@ export const PERSONAL = {
 
 // ─── About ───────────────────────────────────────────────────────────────────
 export const ABOUT_DESCRIPTION =
-  'Full-stack architect building production-ready real-time systems. Currently shipping BoltChats, a Discord-like messaging platform with sub-100ms latency, powering 10,000+ concurrent WebSocket connections.' + 
-  ' 4 years architecting microservices: designed 3-service FastAPI architecture (REST API, WebSocket, async workers), optimized MongoDB with cursor-based pagination, built observability stack (Prometheus/Grafana/Loki), deployed on Kubernetes achieving 5,000+ msg/sec throughput. I think in distributed systems, write-behind patterns, message persistence, infrastructure reliability.' + 
+  'Full-stack architect building production-ready real-time systems. Currently shipping BoltChats, a Discord-like messaging platform achieving P99 latency < 180ms with 5,000+ msg/sec throughput.' + 
+  ' 4 years architecting microservices: designed 3-service FastAPI architecture (REST API, WebSocket, async workers), optimized MongoDB with cursor-based pagination, built observability stack (Prometheus/Grafana/Loki), deployed on Kubernetes with auto-scaling infrastructure. I think in distributed systems, write-behind patterns, message persistence, infrastructure reliability.' + 
   ' Building platforms that users experience instantly and systems that admins scale effortlessly.'
 
 export const RESUME_URL = '/resume/emre-sarigul@outlook.com.pdf';
@@ -229,8 +229,8 @@ export const EXPERIENCE_INTRO = {
 export const EXPERIENCE_HIGHLIGHTS = [
   '3-service microservices architecture (REST API, WebSocket, async storage worker)',
   'Redis Pub/Sub + Queue dual-pattern for real-time broadcasting and message persistence',
-  '5,000+ messages/sec throughput with sub-100ms latency',
-  '10,000+ concurrent WebSocket connections on Kubernetes (EKS)',
+  'Performance: 5,000+ msg/sec throughput with P99 latency < 180ms',
+  'Kubernetes deployment (EKS) with auto-scaling 3-10 pod replicas under load',
   'Full observability stack: Prometheus, Grafana, Loki, Tempo with distributed tracing',
   'Infrastructure as Code: Terraform (VPC, EKS, RDS Redis), Kustomize overlays (dev/staging/prod)',
   'CI/CD automation: GitHub Actions, Docker, ECR, automatic deployments'
